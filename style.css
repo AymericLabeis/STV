@@ -445,7 +445,7 @@ video:fullscreen {
   .ContainerExclu{
     display: flex;
     padding:  10px 0px;
-    border: 2px solid black;
+    
   }
   .containeurVideoExclu {
     display: flex;
@@ -498,7 +498,7 @@ video:fullscreen {
 @media screen and (max-width:767px){
  
   .exclu {
-    margin: 0px;
+    margin: 2px;
     font-size: 35px;
     letter-spacing: 0.1em; /* Ajuste l'espacement entre les lettres */
 
@@ -548,8 +548,7 @@ video:fullscreen {
   }
   .inputMenuContainer {
     position: fixed; 
-    top: 0px;
-     
+    top: 0px; 
     justify-content: flex-start;
     background-color: rgb(41,39,37);
     border-bottom: 3px solid #000; /* 2 pixels d'épaisseur et couleur noire */
@@ -570,7 +569,7 @@ video:fullscreen {
     z-index: 1000;
   }
   .rechercher{
-    width: 4%;
+  width: 4%;
   min-width: 40px;
   height: 25px; 
   border-radius: 15px 50px 50px 15px;
@@ -643,8 +642,6 @@ video:fullscreen {
    display: none;
   }
   .ContainerNews {
-    
-    margin-top: 10px;
     margin-bottom: 50px;
   }
   
