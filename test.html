@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="fruits et légumes de saison">
+  <title>Stream_TV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Paprika&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      position: relative;
+      width: 100%;
+      background-color: #fff;
+    }
+    .inputMenuContainer {
+      position: sticky;
+      top: 0;
+      padding: 5px;
+      display: flex;
+      justify-content: flex-start;
+      width: 100%;
+      background-color: #fff;
+      border-bottom: 2px solid black;
+      z-index: 1000;
+    }
+    .categories {
+      position: sticky;
+      top: 60px;
+      background-color: #fff;
+      border-bottom: 2px solid black;
+      z-index: 999;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="ContaineurMenu">
+    <div class="logoWidget">
+      <a href=""><img class="logo" src="ressources/logo_STV1.png" alt="Image du logo"></a>
+      <div class="widget">
+        <button type="submit" class="home"></button>
+        <button type="submit" class="clap"></button>
+        <button type="submit" class="compte"></button>
+        <button type="submit" class="camera"></button>
+        <button type="submit" class="reglage"></button>
+      </div>
+    </div>
+    <div class="Menu">
+      <header>
+        <div class="inputMenuContainer">
+          <div class="inputSearch">
+            <input type="text" placeholder="rechercher">
+            <button type="submit" class="rechercher"></button>
+            <button type="submit" class="Micro"></button>
+          </div>
+          <div class="menuD">
+            <button type="submit" class="notif"></button>
+            <button type="submit" class="barre"></button>
+          </div>
+        </div>
+      </header>
+      <div class="categories">
+        <!-- Vos boutons de catégories ici -->
+      </div>
+      <h1>Exclusivité</h1>
+      <div class="ContainerExclu">
+        <button class="flecheG" data-direction="prev"></button>
+        <div class="containeurVideoExclu">
+          <!-- Vidéos exclusives -->
+        </div>
+        <button class="flecheD" data-direction="next"></button>
+      </div>
+      <div class="barreDef">
+        <button type="submit" class="flecheBG" data-direction="prev"></button>
+        <div class="rectDef" data-index="0"></div>
+        <!-- Autres rectDef -->
+        <button type="submit" class="flecheBD" data-direction="next"></button>
+      </div>
+    </div>
+    <h1>Nouveauté</h1>
+    <div class="ContainerNews">
+      <!-- Vidéos nouvelles -->
+    </div>
+  </div>
+  <footer></footer>
+  <script src="app.js"></script>
+</body>
+
+</html>

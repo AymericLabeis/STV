@@ -10,12 +10,24 @@ body {
   width: 100%;
 
 }
-h1 {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  margin: 15px;
-  font-size: 60px;
-  text-align: center;
-  color: rgb(41,39,37);
+.exclu{
+ /*font-family: Verdana, Geneva, Tahoma, sans-serif;*/
+ font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+ letter-spacing: 0.20em; /* Ajuste l'espacement entre les lettres */
+ margin: 15px;
+ font-size: 50px;
+ text-align: center;
+ color: rgb(41,39,37);
+}
+.news{
+  /*font-family: Verdana, Geneva, Tahoma, sans-serif;*/
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+ letter-spacing: 0.20em; /* Ajuste l'espacement entre les lettres */
+ margin: 15px;
+ font-size: 50px;
+ text-align:start;
+ color: rgb(41,39,37);
+ margin-left: 50px;
 }
 header {
   width: 100%;
@@ -24,7 +36,7 @@ header {
   width: 100%;
   display: flex;
   align-items: center;
- border: 5px solid rgb(19, 175, 115);
+ /*border: 5px solid rgb(19, 175, 115);*/
 }
 .logoWidget {
   width: 10%;
@@ -36,7 +48,7 @@ header {
 }
 .logo {
   width: 90%;
-  
+  max-width: 250px;
   margin: 5px;
 }
 .widget {
@@ -82,15 +94,25 @@ header {
   display: flex;
   flex-direction: column;
   width: 90%;
+  
+   
+    
  /* border: 2px solid black;*/
 }
+
 .inputMenuContainer {
+  position: sticky;
+  top: 0; 
   padding: 5px;
   display: flex;
   justify-content: flex-start;
   width: 100%;
+
+   z-index: 1000;
 }
 .inputSearch {
+ 
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -110,7 +132,7 @@ header {
 }
 .inputSearch input::placeholder {
   color: rgb(78, 74, 187); /* Couleur du placeholder */
-  opacity: 1; /* Assure que la couleur du placeholder est pleinement visible */
+
 }
 .rechercher{
   width: 4%;
@@ -122,6 +144,10 @@ header {
   margin-left: 10px;
   cursor: pointer;
 }
+.rechercher:hover{
+ /* border: 2px solid  rgb(56, 56, 56);*/
+ background-color: rgb(66, 62, 184);
+}
 .Micro, .notif {
   margin-left: 15px;
   width: 40px;
@@ -131,16 +157,21 @@ header {
   border: 2px solid rgb(255, 255, 255);
   cursor: pointer;
 }
+.Micro:hover, .notif:hover {
+  border: 2px solid  rgb(78, 74, 187);
+}
 .Micro {
   background: url(ressources/micro.png);
   background-color: rgb(213, 215, 233);
   background-size: 100%;
 }
+
 .menuD {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  
+ 
+  z-index: 800; /* S'assure que l'élément reste au-dessus des autres */
   /*border: 2px solid black;*/
 }
 .notif {
@@ -159,52 +190,50 @@ header {
   background-size: 100%;
   border: none;
   cursor: pointer;
+  transition: filter 0.3s; /* Smooth transition for the filter */
 }
+
+.barre:hover {
+  filter: hue-rotate(350deg); /* Adjust the value to change the color */
+}
+
 .categories {
+  
   display: flex;
-  flex-direction: row; /* Afficher les éléments horizontalement */
+  flex-direction: row; 
   align-items: center;
   justify-content: flex-start;
   margin-top: 10px;
   margin-left: 40px;
- /* overflow-x: auto; /* Activer le défilement horizontal */
-  /*overflow-y: hidden; /* Désactiver le défilement vertical */
-  max-width: 100%; /* S'assurer que le conteneur ne dépasse pas la largeur parent */
+  overflow-x: auto; /* Permet le défilement horizontal */
+  white-space: nowrap; /* Évite le retour à la ligne des éléments enfants */
+  scrollbar-width: none; /* Masque la barre de défilement pour les navigateurs modernes */
+  max-width: 100%; /* Assure que le conteneur ne dépasse pas la largeur parent */
 }
 
 /* Personnalisation de la barre de défilement */
-
 .categories::-webkit-scrollbar {
-  
-  height: 15px; /* Hauteur de la barre de défilement horizontale */
-}
-.categories::-webkit-scrollbar-track {
-  margin: 30px;
-  background-color: rgb(213, 215, 233);
-  border-radius: 10px; 
+  display: none; /* Masque la barre de défilement pour les navigateurs basés sur WebKit */
 }
 
-.categories::-webkit-scrollbar-thumb {
-  background: rgb(111, 108, 190); 
-  border-radius: 10px; 
-  border: 2px solid #f1f1f1; 
-}
-
-.categories::-webkit-scrollbar-thumb:hover {
-  background: rgb(78, 74, 187); /* Couleur de la poignée de défilement au survol */
-}
 .nomCat {
+  display: inline-block;
   margin: 5px;
   padding: 5px;
   min-width: 160px;
-  flex-shrink: 0; /* Empêcher les éléments de rétrécir */
+  flex-shrink: 0; /* Empêche les éléments de rétrécir */
   font-size: 20px;
   color: aliceblue;
   border: 2px solid rgb(253, 253, 253);
   border-radius: 8px;
-  background-color: rgb(41,39,37);
+  background-color: rgb(41, 39, 37);
   cursor: pointer;
 }
+
+.nomCat:hover {
+  border: 2px solid rgb(180, 180, 180);
+}
+
 .ContainerExclu {
   display: flex;
   align-items: center;
@@ -240,8 +269,10 @@ header {
   border-radius: 10px;
   flex-shrink: 0;
   scroll-snap-align: start;
+  
 }
 .flecheG, .flecheD {
+  /*background-size: cover;*/
   display: none;
 } 
 .flecheG{
@@ -260,6 +291,7 @@ header {
   margin-top: 0px;
   width: 70%;
   height: 25px;
+  min-height: 0px;
   background-color: rgb(213, 215, 233);;
   border-radius: 15px;
   border: 2px solid rgb(78, 74, 187);
@@ -290,9 +322,16 @@ header {
   margin:auto;
   width: 10%;
   height: 13px;
-  background-color: rgb(111, 108, 190);
+  min-height: 10px;
+  background-color: rgb(158, 153, 168);
   border-radius: 5px;
+  transition: background-color 0.3s ease; /* Pour une transition douce */
 }
+
+.rectDef.active {
+  background-color: rgb(78, 74, 187); /* Couleur lorsque l'élément est actif */
+}
+
 /*.ContainerExclu iframe:first-child {
 }*/
 .ContainerNews {
@@ -312,10 +351,20 @@ header {
   max-width: 500px;
   cursor: pointer;
 }
+video:fullscreen {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; /* Assure que la vidéo couvre tout l'écran */
+}
+
 @media screen and (min-width:768px) and (max-width:1279px)  {
-  h1 {
+ 
+  .exclu, .news{
     margin: 5px;
     font-size: 40px;
+  }
+  .news{
+    margin-left: 40px;
   }
   .logoWidget {
     width: 15%;
@@ -345,6 +394,7 @@ header {
   }
   .inputMenuContainer {
     justify-content: flex-start;
+    
   }
   .inputSearch { 
     margin-left: 5px;
@@ -417,13 +467,14 @@ header {
     
   }
   .videoExclu {
+    margin-top: -50px;
     width: 90%;
     display: flex;
     justify-content: flex-start;
     
   }
   .videoExclu video {
-   margin: 0px ;
+   margin: 10px ;
     width: 100%;
     border-radius: 10px;
   }
@@ -444,9 +495,16 @@ header {
   }
 }
 @media screen and (max-width:767px){
-  h1 {
+ 
+  .exclu, .news{
     margin: 5px;
     font-size: 35px;
+    letter-spacing: 0.1em; /* Ajuste l'espacement entre les lettres */
+
+  }
+ 
+  .news{
+    margin-left: 30px;
   }
   .ContaineurMenu{
     width: 100%;
@@ -467,11 +525,16 @@ header {
     justify-content: center; 
     align-items: center; 
     flex-direction: row;
-    border-radius: 10px;
+    border: none;
+    border-radius:2px;
+  
+   z-index: 1000;
   }
   .home, .reglage, .camera, .compte, .clap {
-    margin: 5px auto;
-    border: none;
+    width: 30px;
+  height: 30px;
+    margin: 3px auto;
+    
   }
   .Menu {
     display: flex;
@@ -480,14 +543,19 @@ header {
     
   }
   .inputMenuContainer {
+    position: fixed; 
+    top: 0px;
+     
     justify-content: flex-start;
     background-color: rgb(41,39,37);
+    border-bottom: 3px solid #000; /* 2 pixels d'épaisseur et couleur noire */
   }
   .inputSearch { 
     margin-left: 5px;
     justify-content: flex-start;
   }
   .inputSearch input {
+    margin-left: 5px;
     padding: 5px 5px 5px 12px;
     width: 60%;
     height: 25px;
@@ -518,12 +586,14 @@ header {
    
   }
   .categories {
-    margin-top: 5px;
+    margin-top: 50px;
+    margin-left: 5px;
+   
   }
   .nomCat {
     margin: 5px;
     padding: 3px;
-    min-width: 120px;
+    min-width: 100px;
     font-size: 13px;
 
   }
@@ -569,7 +639,7 @@ header {
   .ContainerNews {
     
     margin-top: 10px;
-   
+    margin-bottom: 50px;
   }
   
   .ContainerNews video {
