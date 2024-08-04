@@ -497,14 +497,17 @@ video:fullscreen {
 }
 @media screen and (max-width:767px){
  
-  .exclu, .news{
-    margin: 5px;
+  .exclu {
+    margin: 0px;
     font-size: 35px;
     letter-spacing: 0.1em; /* Ajuste l'espacement entre les lettres */
 
   }
  
   .news{
+    margin: 0px;
+    font-size: 30px;
+    letter-spacing: 0.1em; 
     margin-left: 30px;
   }
   .ContaineurMenu{
@@ -588,6 +591,7 @@ video:fullscreen {
    
   }
   .categories {
+    margin-top: 50px;
     margin-left: 5px;
    
   }
