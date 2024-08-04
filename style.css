@@ -445,20 +445,21 @@ video:fullscreen {
   .ContainerExclu{
     display: flex;
     padding:  10px 0px;
+    border: 2px solid black;
   }
   .containeurVideoExclu {
     display: flex;
     margin-top: 5px;
-    width: 700px;
+   max-width: 700px;
     aspect-ratio: 16/9;
   }
   
   .flecheG, .flecheD {
     display: block;
     
-    margin: 5px;
-    width: 40px;
-    height: 40px;
+    margin: 0px;
+    width: 30px;
+    height: 30px;
     display: block;
      border-radius: 50%;
      border: none;
@@ -467,7 +468,7 @@ video:fullscreen {
     
   }
   .videoExclu {
-    margin-top: -50px;
+   
     width: 90%;
     display: flex;
     justify-content: flex-start;
@@ -543,8 +544,8 @@ video:fullscreen {
     
   }
   .inputMenuContainer {
-    /*position: fixed; 
-    top: 0px;*/
+    position: fixed; 
+    top: 0px;
      
     justify-content: flex-start;
     background-color: rgb(41,39,37);
@@ -587,7 +588,7 @@ video:fullscreen {
    
   }
   .categories {
-   
+    margin-top: 50px;
     margin-left: 5px;
    
   }
@@ -601,16 +602,17 @@ video:fullscreen {
   .ContainerExclu {
     display: flex;
     padding:  10px 0px;
+    width: 100%;
   }
   .containeurVideoExclu {
-    width: 100%;
+    width: 80%;
     margin-top: 5px;
-   /* border: 2px solid black;*/
+    border: 2px solid black;
    
     
   }
   .videoExclu {
-    width: 95%;
+    width: 90%;
     display: flex;
     justify-content: flex-start;
     
@@ -626,8 +628,8 @@ video:fullscreen {
   .flecheG, .flecheD {
     display: block;
     margin: 5px;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
      border-radius: 50%;
      border: none;
      cursor: pointer;
