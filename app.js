@@ -1,3 +1,49 @@
+const API_KEY = 'AIzaSyBPpnKStP6WHOdWekaUYsxHtQSpnBXdAcc';
+
+async function fetchTrendingVideos(pageToken = '') {
+  const response = await fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&regionCode=FR&maxResults=20&pageToken=${pageToken}&key=${API_KEY}`);
+  const data = await response.json();
+  return data;
+}
+
+async function displayTrendingVideos() {
+  let videos = [];
+  let pageToken = '';
+  
+  // Fetch up to 20 videos (adjust the limit if needed)
+  while (videos.length < 24) {
+    const data = await fetchTrendingVideos(pageToken);
+    videos = videos.concat(data.items);
+    pageToken = data.nextPageToken;
+
+    // Break the loop if there are no more videos to fetch or if we have enough videos
+    if (!pageToken || videos.length >= 24) break;
+  }
+
+  // Ensure we only have 20 videos
+  videos = videos.slice(0, 24);
+
+  const container = document.getElementById('latest-videos');
+  container.innerHTML = '';
+
+  videos.forEach(video => {
+    const videoId = video.id;
+    const iframe = document.createElement('iframe');
+   
+    iframe.src = `https://www.youtube.com/embed/${videoId}`;
+    iframe.frameBorder = '0';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    iframe.allowFullscreen = true;
+    container.appendChild(iframe);
+  });
+}
+
+window.onload = displayTrendingVideos;
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
   const categories = document.querySelector('.categories');
   let isDragging = false;

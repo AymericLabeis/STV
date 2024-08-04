@@ -343,7 +343,7 @@ header {
   /*border: 2px solid black;*/
 }
 
-.ContainerNews video {
+.ContainerNews iframe {
   margin: 10px auto;
   width: 15%;
   aspect-ratio: 16/9;
@@ -488,7 +488,7 @@ video:fullscreen {
    
   }
   
-  .ContainerNews video {
+  .ContainerNews iframe {
     margin: 10px auto;
     width: 30%;
     aspect-ratio: 16/9;
@@ -644,9 +644,9 @@ video:fullscreen {
     margin-bottom: 50px;
   }
   
-  .ContainerNews video {
-    margin: 10px auto;
-    width: 45%;
+  .ContainerNews iframe {
+ 
+    width: 46%;
     aspect-ratio: 16/9;
     border-radius: 10px;
   }
