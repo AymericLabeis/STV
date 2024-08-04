@@ -18,13 +18,14 @@ body {
  font-size: 50px;
  text-align: center;
  color: rgb(41,39,37);
+ text-shadow: 4px 5px 6px rgba(0, 0, 0, 0.4);
 }
 .news{
   /*font-family: Verdana, Geneva, Tahoma, sans-serif;*/
   font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
  letter-spacing: 0.20em; /* Ajuste l'espacement entre les lettres */
  margin: 15px;
- font-size: 50px;
+ font-size: 40px;
  text-align:start;
  color: rgb(41,39,37);
  margin-left: 50px;
@@ -344,6 +345,7 @@ header {
 }
 
 .ContainerNews iframe {
+  
   margin: 10px auto;
   width: 15%;
   aspect-ratio: 16/9;
@@ -359,9 +361,19 @@ video:fullscreen {
 
 @media screen and (min-width:768px) and (max-width:1279px)  {
  
-  .exclu, .news{
-    margin: 5px;
+ 
+  .exclu {
+    margin: 2px;
     font-size: 40px;
+    letter-spacing: 0.1em; /* Ajuste l'espacement entre les lettres */
+
+  }
+ 
+  .news{
+    margin: 0px;
+    font-size: 35px;
+    letter-spacing: 0.1em; 
+    margin-left: 30px;
   }
   .news{
     margin-left: 40px;
@@ -501,7 +513,7 @@ video:fullscreen {
     margin: 2px;
     font-size: 35px;
     letter-spacing: 0.1em; /* Ajuste l'espacement entre les lettres */
-
+    text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.3);
   }
  
   .news{
